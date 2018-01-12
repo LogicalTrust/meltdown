@@ -1,4 +1,4 @@
-# PoC for meltdown/specrte bug
+# PoC for meltdown/spectre bugs
 
 To compile:
 
@@ -16,7 +16,7 @@ For testrun (it leaks data from the userspace):
     00000010  63 72 65 74 21 00                                 |cret!.|
     00000016
   
-To leak data from user or kernelspace:
+To leak data from the userspace or the kernelspace:
 
     akat1@netbsd-dev ~ $ nm /netbsd | grep "B hostname$"
     ffffffff815a9fa0 B hostname
@@ -24,6 +24,6 @@ To leak data from user or kernelspace:
     00000000  6e 65 74 62 73 64 2d 64  65 76                    |netbsd-dev|
     0000000a
     
-Please note that leaked data should be in CPU cache (or not? ;)). More information in the code.
+Please note that leaked data should be in the CPU cache (or not? ;)). More information in the code.
 
-Tested on the FreeBSD and the NetBSD running on top of Intel(R) Core(TM) i5-2500K CPU.
+Tested on the FreeBSD and the NetBSD running on top of the Intel(R) Core(TM) i5-2500K CPU.
